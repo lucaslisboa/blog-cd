@@ -9,26 +9,26 @@
       <% end %>
       </ul>
     </div>
+
+  <div class="field">
+    <%= f.label "Imagem" %>
+    <%= f.text_field :image_post, class: "form-control" %>
+  </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.label "Título" %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :subtitle %>
-    <%= f.text_field :subtitle %>
+    <%= f.label "Subtítulo" %>
+    <%= f.text_field :subtitle, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :image_post %>
-    <%= f.text_field :image_post %>
-  </div>
-
-  <div class="field">
-    <%= f.label :body_text %>
-    <%= f.text_area :body_text %>
+    <%= f.label "Texto" %>
+    <%= f.text_area :body_text,  class: "form-control" %>
   </div>
 
   <div class="field">
@@ -42,6 +42,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Salvar", class:"btn btn-success btn-sm" %>
   </div>
 <% end %>
