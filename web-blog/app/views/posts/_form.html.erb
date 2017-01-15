@@ -27,6 +27,11 @@
   </div>
 
   <div class="field">
+    <%= f.label "Imagem" %>
+    <%= f.file_field :image_post %>
+  </div>
+
+  <div class="field">
     <%= f.label "Texto" %>
     <%= f.text_area :body_text,  class: "form-control" %>
   </div>
