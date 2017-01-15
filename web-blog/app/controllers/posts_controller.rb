@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  
+  before_action :set_category, only: [:new, :edit]
+  before_action :set_user, only: [:new, :edit]
+
   # GET /posts
   # GET /posts.json
   def index
@@ -71,5 +73,17 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :subtitle, :image_post, :body_text, :user_id, :category_id)
+    end
+
+    #Dentro do private para só poder acessar através do próprio controle
+    def set_category
+      @categories = Category.all.collect {|category| [category.name, category.id]}
+    end
+
+    #Dentro do private para só poder acessar através do próprio controle
+    def set_user
+      # @users = User.all.collect {|user| [user.name, user.id]}
+      # @users = User.where(status: 1).collect {|user| [user.show_id_name, user.id]}
+      @users = User.all.collect {|user| [user.show_id_name, user.id]}
     end
 end
