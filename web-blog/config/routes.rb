@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'home', to: "home#index"
+  get 'post_detail/:id', to: "home#post_detail", as: :post_detail
+
   devise_for :users,
     controllers: {:registrations => "registrations"}
 
